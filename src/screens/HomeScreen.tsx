@@ -31,7 +31,7 @@ LocaleConfig.locales['jp'] = {
   today: '今日'
 };
 LocaleConfig.defaultLocale = 'jp';
-import { LoadingSpinner, Card } from '../components';
+import { LoadingSpinner, Card, GeneratingSummaryModal } from '../components';
 import { COLORS, SPACING, FONT_SIZES } from '../constants';
 import { formatDate, formatTime, getTodayString } from '../utils';
 import { apiClient, DashboardData } from '../services/api';
@@ -261,6 +261,9 @@ export default function HomeScreen() {
           </View>
         </View>
       </Modal>
+
+      {/* Summary Generation Modal */}
+      <GeneratingSummaryModal visible={generateSummaryMutation.isPending} />
     </View>
   );
 }
